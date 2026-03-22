@@ -296,7 +296,7 @@ def get_ori_cls(kpts, range_mode=0, total_cls_num=20):
     interval = (ori_range[1] - ori_range[0]) / total_cls_num
     ori_cls = np.floor((ori - ori_range[0]) / interval)
     ori_cls[ori_cls >= total_cls_num] = total_cls_num - 1
-    return ori_cls.astype(np.int64)
+    return ori_cls.astype(int64)
 
 def ori_cls_2_angle(ori_cls, range_mode=0, total_cls_num=20):
     """Given the orientation class, get the mean orientation angle, theta, and the absolute half interval, delta, in radians.
